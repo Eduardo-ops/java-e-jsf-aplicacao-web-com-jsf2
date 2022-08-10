@@ -16,6 +16,10 @@
             Novo Livro
     </ui:define>
 	<ui:define name="conteudo">
+
+		<h:outputLabel value="Usuário logado:" for="usuarioLogado" />
+		<h:outputText value="#{sessionScope['usuarioLogado'].email}" />
+
 		<h:form>
 			<h:messages id="messages" />
 			<fieldset>

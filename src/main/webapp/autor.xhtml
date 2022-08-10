@@ -16,6 +16,10 @@
             Novo Autor
         </ui:define>
 	<ui:define name="conteudo">
+
+		<h:outputLabel value="Usuário logado:" for="usuarioLogado" />
+		<h:outputText value="#{sessionScope['usuarioLogado'].email}" />
+
 		<h:form id="autor">
 			<fieldset>
 				<legend>Dados do Autor</legend>

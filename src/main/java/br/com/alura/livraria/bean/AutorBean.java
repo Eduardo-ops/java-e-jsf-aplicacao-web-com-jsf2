@@ -1,6 +1,7 @@
 package br.com.alura.livraria.bean;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.alura.livraria.dao.DAO;
 import br.com.alura.livraria.modelo.Autor;
@@ -8,6 +9,7 @@ import br.com.alura.livraria.util.ForwardView;
 import br.com.alura.livraria.util.RedirectView;
 
 @ManagedBean
+@ViewScoped
 public class AutorBean {
 
 	private Autor autor = new Autor();

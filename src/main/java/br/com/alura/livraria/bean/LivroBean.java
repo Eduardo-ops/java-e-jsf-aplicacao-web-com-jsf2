@@ -18,6 +18,7 @@ import br.com.alura.livraria.modelo.Livro;
 public class LivroBean {
 
 	private Livro livro = new Livro();
+	private Integer livroId;
 	private Integer autorId;
 
 	public List<Livro> getLivros() {
@@ -82,6 +83,13 @@ public class LivroBean {
 		return "autor?faces-redirect=true";
 	}
 
+	public void carregaPelaId() {
+		if (this.livro == null) {
+			this.livro = new Livro();
+		}
+		this.livro = new DAO<Livro>(Livro.class).buscaPorId(this.autorId);
+	}
+
 	public Integer getAutorId() {
 		return autorId;
 	}
@@ -92,6 +100,18 @@ public class LivroBean {
 
 	public Livro getLivro() {
 		return livro;
+	}
+
+	public Integer getLivroId() {
+		return livroId;
+	}
+
+	public void setLivroId(Integer livroId) {
+		this.livroId = livroId;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 
 }

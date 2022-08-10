@@ -11,6 +11,7 @@ import br.com.alura.livraria.util.RedirectView;
 public class AutorBean {
 
 	private Autor autor = new Autor();
+	private Integer autorId;
 
 	public Autor getAutor() {
 		return autor;
@@ -36,8 +37,27 @@ public class AutorBean {
 		return new ForwardView("livro");
 	}
 
+	public void carregarAutorPeloId() {
+		if (this.autor == null) {
+			this.autor = new Autor();
+		}
+		this.autor = new DAO<Autor>(Autor.class).buscaPorId(this.autorId);
+	}
+
 	public RedirectView voltarMenuLivro() {
 		return new RedirectView("livro");
+	}
+
+	public Integer getAutorId() {
+		return autorId;
+	}
+
+	public void setAutorId(Integer autorId) {
+		this.autorId = autorId;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
 	}
 
 }
